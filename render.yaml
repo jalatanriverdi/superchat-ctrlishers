@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: superchat-phase1
+    runtime: python
+    plan: free
+    buildCommand: python -m unittest discover -s tests -q
+    startCommand: python -m superchat --host 0.0.0.0
+    healthCheckPath: /ready
+    envVars:
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_MODEL
+        value: openai/gpt-5-mini

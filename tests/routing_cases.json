@@ -1,0 +1,107 @@
+[
+  {
+    "name": "three domain switches",
+    "turns": [
+      ["Find me a flight from Baku to Istanbul on Friday.", "flights", "flights"],
+      ["What is playing tonight?", "cinema", "cinema"],
+      ["Do you have wireless headphones under 100 AZN?", "shopping", "shopping"],
+      ["Back to headphones", "followup", "shopping"]
+    ]
+  },
+  {
+    "name": "return to cinema",
+    "turns": [
+      ["What is playing tonight?", "cinema", "cinema"],
+      ["Show me laptops.", "shopping", "shopping"],
+      ["Okay, and the sci-fi one, any seats on Saturday?", "followup", "cinema"]
+    ]
+  },
+  {
+    "name": "product references",
+    "turns": [
+      ["Show me laptops.", "shopping", "shopping"],
+      ["The second one, is it in stock?", "followup", "shopping"],
+      ["Add it to cart", "followup", "shopping"],
+      ["Remove it", "followup", "shopping"]
+    ]
+  },
+  {
+    "name": "flight clarification and follow-up",
+    "turns": [
+      ["Flights to Istanbul on 6 November.", "flights", "flights"],
+      ["From Baku", "followup", "flights"],
+      ["The cheaper one, is it direct?", "followup", "flights"],
+      ["Book one seat", "followup", "flights"]
+    ]
+  },
+  {
+    "name": "bare city clarification after informal destination wording",
+    "turns": [
+      ["list my flight for the istanbul", "flights", "flights"],
+      ["baku", "followup", "flights"],
+      ["6 November", "followup", "flights"]
+    ]
+  },
+  {
+    "name": "mixed intent",
+    "turns": [
+      ["I need a flight to Istanbul on 6 November and a backpack for the trip.", "mixed", "flights,shopping"],
+      ["From Baku", "followup", "flights"]
+    ]
+  },
+  {
+    "name": "second mixed intent",
+    "turns": [
+      ["Find flights to Dubai on Friday and a portable speaker.", "mixed", "flights,shopping"],
+      ["Show me headphones and sci-fi movies.", "mixed", "shopping,cinema"]
+    ]
+  },
+  {
+    "name": "cinema discovery and booking",
+    "turns": [
+      ["Show me English films rated above 8 on Saturday", "cinema", "cinema"],
+      ["Showtimes for Orbit Zero on Saturday", "cinema", "cinema"],
+      ["Book two tickets", "followup", "cinema"]
+    ]
+  },
+  {
+    "name": "search refinements",
+    "turns": [
+      ["Find a flight from Baku to Istanbul on 6 November", "flights", "flights"],
+      ["Show only direct flights", "flights", "flights"],
+      ["Sort by departure time", "followup", "flights"],
+      ["Show me black headphones under 100 AZN", "shopping", "shopping"],
+      ["What is playing tonight?", "cinema", "cinema"],
+      ["Any seats on Saturday?", "followup", "cinema"]
+    ]
+  },
+  {
+    "name": "identifiers across domains",
+    "turns": [
+      ["Show me laptops", "shopping", "shopping"],
+      ["What is playing tonight?", "cinema", "cinema"],
+      ["Tell me about P004", "shopping", "shopping"],
+      ["Show me S011", "cinema", "cinema"],
+      ["Tell me about F001", "flights", "flights"]
+    ]
+  },
+  {
+    "name": "ambiguous and out of scope",
+    "turns": [
+      ["Show me something good.", "ambiguous", ""],
+      ["Book two seats.", "ambiguous", ""],
+      ["Hello, can you help?", "ambiguous", ""],
+      ["What is the weather in Ganja?", "out_of_scope", ""],
+      ["Tell me a recipe", "out_of_scope", ""]
+    ]
+  },
+  {
+    "name": "additional direct requests",
+    "turns": [
+      ["Show me waterproof products", "shopping", "shopping"],
+      ["Find flights from Baku to Paris on 6 November", "flights", "flights"],
+      ["What is showing on Saturday?", "cinema", "cinema"],
+      ["I want a board game", "shopping", "shopping"]
+    ]
+  }
+]

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7fc">
+  <meta name="description" content="One conversation for flights, shopping and cinema.">
+  <title>SuperChat · Flights, shopping & cinema</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="SuperChat overview">
+      <div class="brand"><div class="brand-mark" aria-hidden="true">✧</div><div><strong>SuperChat</strong><small>One chat, every plan.</small></div></div>
+      <button id="reset" class="new-chat" type="button"><span aria-hidden="true">＋</span> New chat</button>
+      <div class="sidebar-main">
+        <div class="section-label">EXPLORE</div>
+        <div class="capabilities" aria-label="Supported topics">
+          <button class="capability" type="button" data-prompt="Find flights from Baku to Istanbul on Friday"><span class="cap-icon flights" aria-hidden="true">✈</span><span><strong>Travel planning</strong><small>Flights and reservations</small></span></button>
+          <button class="capability" type="button" data-prompt="What movies are showing tonight?"><span class="cap-icon cinema" aria-hidden="true">▣</span><span><strong>Cinema</strong><small>Films and showtimes</small></span></button>
+          <button class="capability" type="button" data-prompt="Show me laptops under 1500 AZN"><span class="cap-icon shopping" aria-hidden="true">◈</span><span><strong>Shopping</strong><small>Products and cart</small></span></button>
+        </div>
+        <div class="sidebar-note">Just ask naturally. SuperChat routes each request and remembers your earlier topics.</div>
+      </div>
+      <div class="sidebar-foot"><span class="live-dot" aria-hidden="true"></span> Official mock data <span class="phase">DEMO</span></div>
+    </aside>
+
+    <main class="workspace">
+      <header class="header">
+        <div class="header-title"><div class="mobile-brand" aria-hidden="true">✧</div><div><span class="overline">SUPERCHAT</span><h1>Your conversation</h1></div></div>
+        <div class="header-tools"><span class="language-badge">EN · AZ · RU</span><span class="header-dot" aria-hidden="true"></span><button id="reset-mobile" class="quiet-button" type="button" title="Clear this conversation">New chat</button></div>
+      </header>
+
+      <section id="messages" class="messages" aria-label="Conversation" aria-live="polite">
+        <div id="welcome" class="welcome">
+          <div class="welcome-symbol" aria-hidden="true">✧</div>
+          <div class="welcome-kicker">ONE CONVERSATION, MANY POSSIBILITIES</div>
+          <h2>What can I help you find?</h2>
+          <p>Explore flights, shopping and cinema in one place. Change topics whenever you like.</p>
+          <div class="examples" aria-label="Example questions">
+            <button type="button" data-prompt="Find flights from Baku to Istanbul on Friday"><span class="example-icon flights" aria-hidden="true">✈</span><span><strong>Explore flights</strong><small>Baku to Istanbul on Friday</small></span><span class="example-arrow" aria-hidden="true">↗</span></button>
+            <button type="button" data-prompt="Show me laptops under 1500 AZN"><span class="example-icon shopping" aria-hidden="true">◈</span><span><strong>Find a product</strong><small>Laptops under 1500 AZN</small></span><span class="example-arrow" aria-hidden="true">↗</span></button>
+            <button type="button" data-prompt="What movies are showing tonight?"><span class="example-icon cinema" aria-hidden="true">▣</span><span><strong>Discover cinema</strong><small>Movies showing tonight</small></span><span class="example-arrow" aria-hidden="true">↗</span></button>
+          </div>
+        </div>
+      </section>
+
+      <div class="composer-area">
+        <form id="chat-form" class="composer">
+          <label class="sr-only" for="message">Your message</label>
+          <textarea id="message" name="message" rows="1" maxlength="2000" placeholder="Ask about flights, shopping or cinema…" required></textarea>
+          <input id="photo" class="sr-only" type="file" accept="image/jpeg,image/png,image/webp" aria-label="Upload a product photo">
+          <button id="photo-button" class="tool-button" type="button" title="Search products by photo" aria-label="Search products by photo">▧</button>
+          <button id="voice-button" class="tool-button" type="button" title="Enable hands-free voice input" aria-label="Enable hands-free voice input" aria-pressed="false">◉</button>
+          <button id="send" class="send-button" type="submit" aria-label="Send message"><span class="send-label">Send</span><span aria-hidden="true">↗</span></button>
+        </form>
+        <div class="composer-foot"><p id="status" class="status" role="status"></p><label class="voice-language">Voice language <select id="voice-language"><option value="en-US">English</option><option value="az-AZ">Azərbaycanca</option><option value="ru-RU">Русский</option></select></label><span>Results from the supplied mock datasets</span></div>
+      </div>
+    </main>
+  </div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
